@@ -39,7 +39,7 @@ Widget bigCircle(Color color) {
   );
 }
 
-Widget plainBackground(Widget child, {AppBar appBar}) {
+Widget plainBackground(Widget child, {AppBar appBar, bool isCenter = true}) {
   return Scaffold(
     appBar: appBar,
     backgroundColor: ColorPalette.backgroundPrimaryColor,
@@ -47,7 +47,7 @@ Widget plainBackground(Widget child, {AppBar appBar}) {
       children: [
         Positioned.fill(
           child: Container(
-            child: Center(child: SingleChildScrollView(child: child)),
+            child: isCenter ? Center(child: SingleChildScrollView(child: child)) : SingleChildScrollView(child: child),
           ),
         ),
       ],
