@@ -14,7 +14,8 @@ class LocationPage extends StatelessWidget {
       Column(
         children: [
           container(
-            MapsWidget()
+            MapsWidget(),
+            padding: EdgeInsets.all(0)
           ),
           container(
             Column(
