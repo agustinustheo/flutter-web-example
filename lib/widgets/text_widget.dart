@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
-Widget largeText(String text, {TextAlign textAlign, Color color, EdgeInsets padding}){
+Widget largeText(String text, {TextAlign textAlign, Color color, EdgeInsets padding, FontWeight fontWeight}){
   return Container(
     padding: padding,
     child: Text(
@@ -11,13 +11,14 @@ Widget largeText(String text, {TextAlign textAlign, Color color, EdgeInsets padd
       textAlign: textAlign,
       style: new TextStyle(
         color: color == null ? ColorPalette.textColor : color,
-        fontSize: 20.0
+        fontSize: 20.0,
+        fontWeight: fontWeight == null ? FontWeight.normal : fontWeight
       ),
     )
   );
 }
 
-Widget normalText(String text, {TextAlign textAlign, Color color, EdgeInsets padding}){
+Widget normalText(String text, {TextAlign textAlign, Color color, EdgeInsets padding, FontWeight fontWeight}){
   return Container(
     padding: padding,
     child: Text(
@@ -25,13 +26,14 @@ Widget normalText(String text, {TextAlign textAlign, Color color, EdgeInsets pad
       textAlign: textAlign,
       style: new TextStyle(
         color: color == null ? ColorPalette.textColor : color,
-        fontSize: 18.0
+        fontSize: 18.0,
+        fontWeight: fontWeight == null ? FontWeight.normal : fontWeight
       ),
     )
   );
 }
 
-Widget smallText(String text, {TextAlign textAlign, Color color, EdgeInsets padding}){
+Widget smallText(String text, {TextAlign textAlign, Color color, EdgeInsets padding, FontWeight fontWeight}){
   return Container(
     padding: padding,
     child: Text(
@@ -39,13 +41,14 @@ Widget smallText(String text, {TextAlign textAlign, Color color, EdgeInsets padd
       textAlign: textAlign,
       style: new TextStyle(
         color: color == null ? ColorPalette.textColor : color,
-        fontSize: 14.0
+        fontSize: 14.0,
+      fontWeight: fontWeight == null ? FontWeight.normal : fontWeight
       )
     ),
   );
 }
 
-Widget title(String text, {TextAlign textAlign, Color color, EdgeInsets padding}){
+Widget title(String text, {TextAlign textAlign, Color color, EdgeInsets padding, FontWeight fontWeight}){
   return Container(
     padding: padding,
     child: Text(
@@ -53,13 +56,14 @@ Widget title(String text, {TextAlign textAlign, Color color, EdgeInsets padding}
       textAlign: textAlign,
       style: new TextStyle(
         color: color == null ? ColorPalette.textColor : color,
-        fontSize: 30.0
+        fontSize: 30.0,
+        fontWeight: fontWeight == null ? FontWeight.normal : fontWeight
       ),
     )
   );
 }
 
-Widget subtitle(String text, {TextAlign textAlign, Color color, EdgeInsets padding}){
+Widget subtitle(String text, {TextAlign textAlign, Color color, EdgeInsets padding, FontWeight fontWeight}){
   return Container(
     padding: padding,
     child: Text(
@@ -67,13 +71,14 @@ Widget subtitle(String text, {TextAlign textAlign, Color color, EdgeInsets paddi
       textAlign: textAlign,
       style: new TextStyle(
         color: color == null ? ColorPalette.textColor : color,
-        fontSize: 25.0
+        fontSize: 25.0,
+        fontWeight: fontWeight == null ? FontWeight.normal : fontWeight
       ),
     )
   );
 }
 
-Widget smallTitle(String text, {TextAlign textAlign, Color color, EdgeInsets padding}){
+Widget smallTitle(String text, {TextAlign textAlign, Color color, EdgeInsets padding, FontWeight fontWeight}){
   return Container(
     padding: padding,
     child: Text(
@@ -81,13 +86,14 @@ Widget smallTitle(String text, {TextAlign textAlign, Color color, EdgeInsets pad
       textAlign: textAlign,
       style: new TextStyle(
         color: color == null ? ColorPalette.textColor : color,
-        fontSize: 21.0
+        fontSize: 21.0,
+        fontWeight: fontWeight == null ? FontWeight.normal : fontWeight
       ),
     )
   );
 }
 
-Widget textLink(String text, Function function, {TextAlign textAlign, Color color, EdgeInsets padding}){
+Widget textLink(String text, Function function, {TextAlign textAlign, Color color, EdgeInsets padding, FontWeight fontWeight}){
   return Container(
     padding: padding,
     child: InkWell(
@@ -95,7 +101,8 @@ Widget textLink(String text, Function function, {TextAlign textAlign, Color colo
         text,
         textAlign: textAlign,
         style: new TextStyle(
-          fontSize: 14.0, 
+          fontSize: 14.0,
+          fontWeight: fontWeight == null ? FontWeight.normal : fontWeight,
           color: color == null ? ColorPalette.textLinkColor : color,
         ),
       ),
