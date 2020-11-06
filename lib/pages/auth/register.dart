@@ -21,29 +21,37 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return background(cardContainer(Form(
-        key: _formKey,
-        child: Column(children: [
-          title('Register'),
-          SizedBox(height: 10.0),
-          subtitle('Create a new account'),
-          SizedBox(height: 50.0),
-          textField("Enter username", validator: (input) => ValidatorHelper.validateUsername(input),
-            prefixIcon: Icon(Icons.person), onChanged: (input) => _username = input),
-          SizedBox(height: 7.0),
-          textField("Enter email", validator: (input) => ValidatorHelper.validateEmail(input),
-            prefixIcon: Icon(Icons.email), onChanged: (input) => _email = input),
-          SizedBox(height: 7.0),
-          textField("Enter password", validator: (input) => ValidatorHelper.validatePassword(input),
-            isPassword: true, prefixIcon: Icon(Icons.lock), onChanged: (input) => _password = input),
-          SizedBox(height: 7.0),
-          textField("Re-enter password", validator: (input) => ValidatorHelper.isPasswordMatch(_password, input),
-              isPassword: true, prefixIcon: Icon(Icons.lock)),
-          SizedBox(height: 30.0),
-          textLink("Have an account? Login here",
-              () => NavigatorHelper.push(context, LoginPage(), "Login")),
-          SizedBox(height: 30.0),
-          fullButton(() => authBloc.submitCredentials(_formKey.currentState, context, _email, _password, body: {'username': _username}), text: "Register"),
-        ]))));
+    return background(
+      cardContainer(
+        Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              title('Register'),
+              SizedBox(height: 10.0),
+              subtitle('Create a new account'),
+              SizedBox(height: 50.0),
+              textField("Enter username", validator: (input) => ValidatorHelper.validateUsername(input),
+                prefixIcon: Icon(Icons.person), onChanged: (input) => _username = input),
+              SizedBox(height: 7.0),
+              textField("Enter email", validator: (input) => ValidatorHelper.validateEmail(input),
+                prefixIcon: Icon(Icons.email), onChanged: (input) => _email = input),
+              SizedBox(height: 7.0),
+              textField("Enter password", validator: (input) => ValidatorHelper.validatePassword(input),
+                isPassword: true, prefixIcon: Icon(Icons.lock), onChanged: (input) => _password = input),
+              SizedBox(height: 7.0),
+              textField("Re-enter password", validator: (input) => ValidatorHelper.isPasswordMatch(_password, input),
+                  isPassword: true, prefixIcon: Icon(Icons.lock)),
+              SizedBox(height: 30.0),
+              textLink("Have an account? Login here",
+                  () => NavigatorHelper.push(context, LoginPage(), "Login")),
+              SizedBox(height: 30.0),
+              fullButton(() => authBloc.submitCredentials(_formKey.currentState, context, _email, _password, body: {'username': _username}), text: "Register"),
+            ]
+          )
+        ),
+        boxConstraints: BoxConstraints(maxWidth: 400)
+      )
+    );
   }
 }

@@ -31,7 +31,8 @@ class LocationPage extends StatelessWidget {
                 smallTitle('Atau', textAlign: TextAlign.center, padding: EdgeInsets.all(20.0)),
                 fullButton(() => {}, text: 'SAYA DILUAR AREA')
               ],
-            )
+            ),
+            boxConstraints: BoxConstraints(maxWidth: 600)
           )
         ],
       ),

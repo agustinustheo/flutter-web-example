@@ -1,6 +1,6 @@
-import 'package:DiantarAje/bloc/auth/auth_bloc.dart';
 import 'package:DiantarAje/common/colors.dart';
 import 'package:DiantarAje/helpers/navigator_helper.dart';
+import 'package:DiantarAje/pages/cart.dart';
 import 'package:DiantarAje/widgets/appbar_widget.dart';
 import 'package:DiantarAje/widgets/background_widget.dart';
 import 'package:DiantarAje/widgets/button_widget.dart';
@@ -32,9 +32,10 @@ class HomePage extends StatelessWidget {
                   productPrice: 'Rp. 18.000', 
                   productLabel: 'Ongkir Gratis'
                 ),
-                button(() => NavigatorHelper.push(context, LocationPage(), "Location"), text: "Beli")
+                button(() => NavigatorHelper.push(context, CartPage(), "Cart"), text: "Beli")
               ],
-            )
+            ),
+            boxConstraints: BoxConstraints(maxWidth: 600.0)
           ),
           container(
             Column(
