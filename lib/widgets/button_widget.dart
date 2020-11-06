@@ -32,3 +32,12 @@ Widget fullButton(Function function, {String text, Icon icon, double radius}){
     child: buttonBase(function, text: text, icon: icon, radius: radius),
   );
 }
+
+Widget circularButton(Function function, {String text, Icon icon, bool inverseColor = false}){
+  return RawMaterialButton(
+    shape: CircleBorder(),
+    fillColor: inverseColor ? ColorPalette.buttonTextColor : ColorPalette.buttonColor,
+    child: text == null? icon : normalText(text, fontWeight: FontWeight.bold, color: inverseColor ? ColorPalette.buttonColor : ColorPalette.buttonTextColor),
+    onPressed: function,
+  );
+}
