@@ -2,6 +2,7 @@ import 'package:DiantarAje/helpers/navigator_helper.dart';
 import 'package:DiantarAje/pages/auth/login.dart';
 import 'package:DiantarAje/bloc/auth/auth_bloc.dart';
 import 'package:DiantarAje/common/colors.dart';
+import 'package:DiantarAje/pages/cart.dart';
 import 'package:flutter/material.dart';
 
 class DiantarAjeAppBar {
@@ -32,7 +33,7 @@ class DiantarAjeAppBar {
                 icon: Icon(Icons.shopping_cart, color: ColorPalette.buttonTextColor),
                 onPressed: () async{
                   authBloc.closeSession();
-                  NavigatorHelper.push(context, LoginPage(), "Login");
+                  NavigatorHelper.push(context, CartPage(), "Cart");
                 }
               )
             ],
