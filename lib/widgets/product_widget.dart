@@ -15,12 +15,14 @@ Widget productCard({String productTitle, String imageUrl, String productPrice, S
           child: Image.network(imageUrl)
         ),
         subtitle(productTitle),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+        Wrap(
+          direction: Axis.horizontal,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 60.0,
+          children:[
             normalText(productPrice),
             label(productLabel)
-          ],
+          ] 
         )
       ]
     ),
