@@ -8,6 +8,7 @@ import 'package:DiantarAje/widgets/container_widget.dart';
 import 'package:DiantarAje/widgets/gmaps_widget.dart';
 import 'package:DiantarAje/widgets/product_widget.dart';
 import 'package:DiantarAje/widgets/text_widget.dart';
+import 'package:DiantarAje/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'location.dart';
@@ -15,8 +16,8 @@ import 'location.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return plainBackground(
-      Column(
+    return PlainBackground(
+      child: Column(
         children: [
           container(
             MapsWidget(),
@@ -26,13 +27,13 @@ class HomePage extends StatelessWidget {
             Column(
               children: [
                 title('Welcome!'),
-                productCard(
+                ProductCard(
                   productTitle: 'Gallon',
                   imageUrl: 'https://th.bing.com/th/id/OIP.3CUOO9-gM_T-W5N9EZNQXQHaMM?pid=Api&rs=1',
                   productPrice: 'Rp. 18.000', 
-                  productLabel: 'Ongkir Gratis'
+                  productLabel: 'Ongkir Gratis',
                 ),
-                button(() => NavigatorHelper.push(context, CartPage(), "Cart"), text: "Beli")
+                Button(function:() => NavigatorHelper.push(context, CartPage(), "Cart"), text: "Beli")
               ],
             ),
             boxConstraints: BoxConstraints(maxWidth: 600.0)
@@ -40,13 +41,13 @@ class HomePage extends StatelessWidget {
           container(
             Column(
               children: [
-                normalText(
-                  'Perhatian',
+                NormalText(
+                  text: 'Perhatian',
                   padding: EdgeInsets.all(5.0),
                   color: Colors.white
                 ),
-                smallText(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet enim id lobortis placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
+                SmallText(
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet enim id lobortis placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
                   textAlign: TextAlign.center,
                   padding: EdgeInsets.all(5.0),
                   color: Colors.white

@@ -30,7 +30,7 @@ class _RadioButtonListState extends State<RadioButtonList> {
               children: <Widget>[
                 cb,
                 Expanded(flex: 10, child: txt),
-                helpbutton(() => showDescription(txt.data, context),
+                Helpbutton(function:() => showDescription(txt.data, context),
                     icon: Icon(Icons.help), radius: 10.0)
               ],
             ),
@@ -41,18 +41,18 @@ class _RadioButtonListState extends State<RadioButtonList> {
   }
 }
 
-Widget _buildExplanation(String title) {
-  return Center(
-    child: title == "40/30/20"
-        ? Text(
-            "40 percent of your income are allocated to your daily needs expenses, \n30 percent of it distributed as wants,\nand the remaining 20 percent are considered as savings.")
-        : title == "50/40/10"
-            ? Text(
-                "50 percent of your income are allocated to daily needs expenses, \n40 percent to savings,\nand the remaining 10 percent to debt.")
-            : Text(
-                "30 percent of your income to expenses,\n20 percent to debt,\n20 percent to savings,\nand the remaining 20 percent to giving."),
-  );
-}
+// Widget _buildExplanation(String title) {
+//   return Center(
+//     child: title == "40/30/20"
+//         ? Text(
+//             "40 percent of your income are allocated to your daily needs expenses, \n30 percent of it distributed as wants,\nand the remaining 20 percent are considered as savings.")
+//         : title == "50/40/10"
+//             ? Text(
+//                 "50 percent of your income are allocated to daily needs expenses, \n40 percent to savings,\nand the remaining 10 percent to debt.")
+//             : Text(
+//                 "30 percent of your income to expenses,\n20 percent to debt,\n20 percent to savings,\nand the remaining 20 percent to giving."),
+//   );
+// }
 
 Future<void> showDescription(String title, BuildContext context) async {
   return showDialog<void>(
@@ -64,14 +64,36 @@ Future<void> showDescription(String title, BuildContext context) async {
         content: SingleChildScrollView(
           child: ListBody(
             children: <Widget>[
-              _buildExplanation(title),
+              BuildExplanation(title: title),
             ],
           ),
         ),
         actions: <Widget>[
-          button(() => Navigator.of(context).pop(), text: "Okay")
+          Button(function:() => Navigator.of(context).pop(), text: "Okay")
         ],
       );
     },
   );
+}
+
+class BuildExplanation extends StatelessWidget{
+  final String title;
+
+  BuildExplanation({
+    this.title
+  });
+
+  @override
+  Widget build(BuildContext context){
+    return Center(
+      child: title == "40/30/20"
+          ? Text(
+              "40 percent of your income are allocated to your daily needs expenses, \n30 percent of it distributed as wants,\nand the remaining 20 percent are considered as savings.")
+          : title == "50/40/10"
+              ? Text(
+                  "50 percent of your income are allocated to daily needs expenses, \n40 percent to savings,\nand the remaining 10 percent to debt.")
+              : Text(
+                  "30 percent of your income to expenses,\n20 percent to debt,\n20 percent to savings,\nand the remaining 20 percent to giving."),
+    );
+  }
 }
