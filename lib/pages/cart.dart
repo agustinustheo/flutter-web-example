@@ -18,8 +18,8 @@ class CartPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          container(
-            Column(
+          DefaultContainer(
+            child: Column(
               children: [
                 title('Keranjang Belanja', padding: EdgeInsets.all(10.0)),
                 alignRight(Button(function:() => NavigatorHelper.push(context, HomePage(), "Home"), text: "Kembali Belanja")),
@@ -36,7 +36,7 @@ class CartPage extends StatelessWidget {
           )
         ],
       ),
-      // isCenter: false,
+      isCenter: false,
       appBar: DiantarAjeAppBar("DiantarAje", context: context).getAppBar()
     );
   }

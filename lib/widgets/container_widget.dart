@@ -23,16 +23,16 @@ import 'package:flutter/material.dart';
 //   );
 // }
 
-Widget container(Widget child, {double width, double height, EdgeInsets padding, Color backgroundColor, BoxConstraints boxConstraints}){
-  return Container(
-    width: width,
-    height: height,
-    padding: padding == null ? EdgeInsets.all(10.0) : padding,
-    constraints: boxConstraints,
-    color: backgroundColor,
-    child: child
-  );
-}
+// Widget container(Widget child, {double width, double height, EdgeInsets padding, Color backgroundColor, BoxConstraints boxConstraints}){
+//   return Container(
+//     width: width,
+//     height: height,
+//     padding: padding == null ? EdgeInsets.all(10.0) : padding,
+//     constraints: boxConstraints,
+//     color: backgroundColor,
+//     child: child
+//   );
+// }
 
 class CardContainer extends StatelessWidget{
   final Widget child;
@@ -70,34 +70,32 @@ class CardContainer extends StatelessWidget{
   }
 }
 
-// class Container extends StatelessWidget{
-//   final Widget child;
-//   final double width;
-//   final double height;
-//   final EdgeInsets padding;
-//   final Color backgroundColor;
-//   final BoxConstraints boxConstraints;
+class DefaultContainer extends StatelessWidget{
+  final Widget child;
+  final double width;
+  final double height;
+  final EdgeInsets padding;
+  final Color backgroundColor;
+  final BoxConstraints boxConstraints;
 
-//   Container({
-//     this.child,
-//     this.width,
-//     this.height,
-//     this.padding,
-//     this.backgroundColor,
-//     this.boxConstraints,
-//   });
+  DefaultContainer({
+    this.child,
+    this.width,
+    this.height,
+    this.padding,
+    this.backgroundColor,
+    this.boxConstraints,
+  });
 
-//   @override
-//   Widget build(BuildContext context){
-//     return Container(
-//       width: width,
-//       height: height,
-//       padding: padding == null ? EdgeInsets.all(10.0) : padding,
-//       constraints: boxConstraints,
-//       color: backgroundColor,
-//       child: child
-//     );
-//   }
-// }
-
-
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      width: width,
+      height: height,
+      padding: padding == null ? EdgeInsets.all(10.0) : padding,
+      constraints: boxConstraints,
+      color: backgroundColor,
+      child: child
+    );
+  }
+}

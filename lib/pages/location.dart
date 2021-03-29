@@ -13,12 +13,12 @@ class LocationPage extends StatelessWidget {
     return PlainBackground(
       child: Column(
         children: [
-          container(
-            MapsWidget(),
+          DefaultContainer(
+            child: MapsWidget(),
             padding: EdgeInsets.all(0)
           ),
-          container(
-            Column(
+          DefaultContainer(
+            child: Column(
               children: [
                 title('Saat Ini Hanya Bisa Melayani di Daerah Kebun Jeruk dan Sekitarnya', textAlign: TextAlign.center, padding: EdgeInsets.all(20.0)),
                 Row(
@@ -37,8 +37,8 @@ class LocationPage extends StatelessWidget {
                               ),
                             ),
 
-                            container(
-                              NormalText(text: 'Jarak Anda Saat Ini Dengan Toko Kami: 3,8KM', color: Colors.white ),
+                            DefaultContainer(
+                              child: NormalText(text: 'Jarak Anda Saat Ini Dengan Toko Kami: 3,8KM', color: Colors.white ),
                             ),
                             
                           ],

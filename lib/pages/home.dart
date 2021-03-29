@@ -19,12 +19,12 @@ class HomePage extends StatelessWidget {
     return PlainBackground(
       child: Column(
         children: [
-          container(
-            MapsWidget(),
+          DefaultContainer(
+            child: MapsWidget(),
             padding: EdgeInsets.all(0)
           ),
-          container(
-            Column(
+          DefaultContainer(
+            child: Column(
               children: [
                 title('Welcome!'),
                 ProductCard(
@@ -38,8 +38,8 @@ class HomePage extends StatelessWidget {
             ),
             boxConstraints: BoxConstraints(maxWidth: 600.0)
           ),
-          container(
-            Column(
+          DefaultContainer(
+            child: Column(
               children: [
                 NormalText(
                   text: 'Perhatian',

@@ -116,12 +116,12 @@ class BigCircle extends StatelessWidget{
 class PlainBackground extends StatelessWidget{
   final Widget child;
   final AppBar appBar;
-  final bool isCenter = true;
+  final bool isCenter;
 
   PlainBackground({
     this.child,
     this.appBar,
-    // this.isCenter,
+    this.isCenter = true,
   });
 
   @override
